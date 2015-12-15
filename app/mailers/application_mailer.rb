@@ -1,4 +1,4 @@
 class ApplicationMailer < ActionMailer::Base
-  default from: "yearbook@gmail.com"
+  default from: "dshahn.2012@smu.edu.sg"
   
 end
