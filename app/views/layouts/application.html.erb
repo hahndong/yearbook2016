@@ -30,8 +30,11 @@
 <div class="navbar2">
   <div class="container">
     <ul>
+      <% if user_signed_in? %>
       <li><%= link_to "Solo Pictures", solos_path %></li>
       <li><%= link_to "Group Picture", groups_path %></li>
+      <li><%= link_to "Designer Needed", solos_designs_path %></li>
+      <% end %>
     </ul>
   </div>
 </div>

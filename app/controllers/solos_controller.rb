@@ -4,7 +4,7 @@ class SolosController < ApplicationController
   rescue_from Pundit::NotAuthorizedError, with: :user_not_authorized
   protect_from_forgery with: :exception
   before_action :authenticate_user!, except: [:index]
-  after_action :verify_authorized, except: [:index]
+  after_action :verify_authorized, except: [:index, :designs, :volunteer, :thankyou]
   before_action :set_solo, only: [:show, :edit, :update, :destroy]
 
   def index
@@ -60,6 +60,19 @@ class SolosController < ApplicationController
       format.json { head :no_content }
     end
     authorize @solo
+  end
+
+  def designs
+  end
+
+  def volunteer
+    current_user.update_attribute(:volunteer, 1)
+
+    SendToUsers.volunteer(current_user).deliver_now
+    redirect_to solos_thankyou_path
+  end
+
+  def thankyou
   end
 
   private

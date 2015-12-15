@@ -4,4 +4,10 @@ class SendToUsers < ApplicationMailer
     mail( :to => @user.email,
     :subject => 'Accountancy 2016 Year Book' )
   end
+
+  def volunteer(user)
+    @user = user
+    mail( :to => 'dshahn.2012@accountancy.smu.edu.sg',
+      :subject => 'Someone volunteered')
+  end
 end
