@@ -87,7 +87,7 @@ Rails.application.configure do
 
     :address            => 'pod51003.outlook.com',
     :port               => 587,
-    :domain             => 'smu.edu.sg', #you can also use google.com
+    :domain             => 'accountancy.smu.edu.sg', #you can also use google.com
     :authentication     => :plain,
     :user_name          => ENV["EMAIL"],
     :password           => ENV["PASSWORD"],
