@@ -5,6 +5,8 @@
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <% if controller_name == 'groups' && ( action_name == 'new' || action_name == 'edit' ) %>
     <% java_to_load = 'groups' %>
+  <% elsif controller_name == 'solos' && action_name == 'index' %>  
+    <% java_to_load = 'solos' %>
   <% else %>
     <% java_to_load = 'null' %>
   <% end %>
@@ -18,7 +20,7 @@
       <li style="float:left;">SMU <span>Accountancy Graduating Class of 2016 Year Book</span></li>
       <% if user_signed_in? %>
         <li><%= link_to('Logout', destroy_user_session_path, :method => :delete) %></li>
-        <li><span>Logged in as <%= current_user.name %></span></li>
+        <li><span>Logged in as </span><%= link_to "#{current_user.full_name}", edit_user_path(current_user) %></li>
       <% else %>
         <li style="font-size:14px;padding:13px;">No Access Outsiders</li>
       <% end %>

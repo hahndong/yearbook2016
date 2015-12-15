@@ -1,7 +1,7 @@
 
 <% if user_signed_in? %>
   <% unless current_user.solo %>
-  <h2>Personal Submission For <%= current_user.full_name %></h2>
+  <h2>Personal Submission For <% if current_user.name.blank? %><%= link_to "<Enter name to appear on year book>", edit_user_path(current_user) %><% else %><%= link_to "#{current_user.name}", edit_user_path(current_user) %><% end %></h2>
     <%= render 'form' %>
   <% else %>
   <p>You have submitted your picture. <%= link_to "Click here to edit your submission", edit_solo_path(current_user.solo.id) %></p>

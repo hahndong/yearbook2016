@@ -1,4 +1,4 @@
-<div class="solo">
+<div class="solo", id= <%= "solo#{solo.id}" %> >
 
 <%= image_tag solo.picture.url(:thumb) %>>
 <div class="solo-quote"><p style="margin-top:75px;"><%=h truncate(solo.quote, length: 80) %></p>
