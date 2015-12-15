@@ -76,7 +76,7 @@ Rails.application.configure do
 
   # Do not dump schema after migrations.
   config.active_record.dump_schema_after_migration = false
-  config.action_mailer.default_url_options = { host: "yearbook.heroku-app.com" }
+  config.action_mailer.default_url_options = { host: "yearbook2016.heroku-app.com" }
 
 
   ActionMailer::Base.delivery_method = :smtp
@@ -85,9 +85,9 @@ Rails.application.configure do
   ActionMailer::Base.smtp_settings = 
   {
 
-    :address            => 'smtp.gmail.com',
+    :address            => 'smtp.live.com',
     :port               => 587,
-    :domain             => 'gmail.com', #you can also use google.com
+    :domain             => 'smu.edu.sg', #you can also use google.com
     :authentication     => :plain,
     :user_name          => ENV["EMAIL"],
     :password           => ENV["PASSWORD"],
