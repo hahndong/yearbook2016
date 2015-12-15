@@ -85,9 +85,9 @@ Rails.application.configure do
   ActionMailer::Base.smtp_settings = 
   {
 
-    :address            => 'pod51003.outlook.com',
+    :address            => 'smtp.gmail.com',
     :port               => 587,
-    :domain             => 'accountancy.smu.edu.sg', #you can also use google.com
+    :domain             => 'gmail.com', #you can also use google.com
     :authentication     => :plain,
     :user_name          => ENV["EMAIL"],
     :password           => ENV["PASSWORD"],
