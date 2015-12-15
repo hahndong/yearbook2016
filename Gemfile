@@ -18,6 +18,7 @@ gem 'chartkick'
 gem 'groupdate'
 gem 'simple_token_authentication'
 gem "paperclip", "~> 4.3"
+gem 'aws-sdk'
 
 gem 'rails', '4.2.3'
 gem 'sass-rails', '~> 5.0'
