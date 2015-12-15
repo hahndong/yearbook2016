@@ -1,0 +1,65 @@
+<%= simple_form_for(@solo) do |f| %>
+  <%= f.error_notification %>
+
+  <div class="form-inputs">
+    <div  style="text-align:center;"><p><%= image_tag @solo.picture.url(:thumb) %></p>
+    
+    
+    <%= f.input :picture, as: :file, label: false %>
+    Please upload personal picture. </br>(Only jpeg, jpg and png allowed)
+    <p style="color:#ff4162">You <strong>do not</strong> have to answer all questions. </br>We will try our best to display all answers.</p>
+    </div>
+    <div class="solo-questions">
+    <p>Quote</p>
+    <%= f.input :quote, label: false %>
+    </div>
+    <div class="solo-questions">
+    <p>What is the most memorable event in SMU?</p>
+    <%= f.input :ans1, label: false %>
+    </div>
+    <div class="solo-questions">
+    <p>What is the most memorable event in SMU?</p>
+    <%= f.input :ans2, label: false %>
+    </div>
+    <div class="solo-questions">
+    <p>What is the most memorable event in SMU?</p>
+    <%= f.input :ans3, label: false %>
+    </div>
+    <div class="solo-questions">
+    <p>What is the most memorable event in SMU?</p>
+    <%= f.input :ans4, label: false %>
+    </div>
+    <div class="solo-questions">
+    <p>What is the most memorable event in SMU?</p>
+    <%= f.input :ans5, label: false %>
+    </div>
+    <div class="solo-questions">
+    <p>What is the most memorable event in SMU?</p>
+    <%= f.input :ans6, label: false %>
+    </div>
+    <div class="solo-questions">
+    <p>What is the most memorable event in SMU?</p>
+    <%= f.input :ans7, label: false %>
+    </div>
+    <div class="solo-questions">
+    <p>What is the most memorable event in SMU?</p>
+    <%= f.input :ans8, label: false %>
+    </div>
+    <div class="solo-questions">
+    <p>Post your own question 1</p>
+    <%= f.input :qn9, label: false %>
+    <%= f.input :ans9, label: false %>
+    </div>
+    <div class="solo-questions">
+    <p>Post your own question 2</p>
+    <%= f.input :qn10, label: false %>
+    <%= f.input :ans10, label: false %>
+    </div>
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit, value: "Submit", id: "solo-submit" %>
+  </div>
+  <%= link_to 'Delete', @solo, method: :delete, data: { confirm: 'Are you sure?' }, id: "delete-solo" %>
+<% end %>
+<div style="clear:both"></div>

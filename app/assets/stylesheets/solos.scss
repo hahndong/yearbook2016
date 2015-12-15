@@ -1,0 +1,116 @@
+// Place all the styles related to the solos controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+.solo{
+  position:relative;
+  display:inline-block;
+  margin:0px;
+  padding:0px 20px 20px 0px;
+  font-size:0px;
+  .solo-quote{
+    display:none;
+    position: absolute;
+    top: 0px;
+    width: 300px;
+    height:300px;
+    background-color:rgba(255,255,255,0.9);
+    p{
+      margin-left:auto;
+      margin-right:auto;
+      width: 200px;
+      text-align:center;
+      font-size:15px;
+      word-wrap: break-word;
+      color:#ff4162;
+      letter-spacing:2px;
+    }
+    
+  }
+  .solo-name{
+    position:absolute;
+    top:250px;
+    margin:0px;
+    padding:5px 20px;
+    height:20px;
+    line-height:20px;
+    font-size:13px;
+    background-color:#10aeb2;
+    color:white;
+  }
+}
+.solo-questions{
+  display:block-inline;
+  width:302px;
+  float:left;
+  padding-right:20px;
+  p{
+    font-size:15px;
+    height:30px;
+  }
+}
+.text{
+  margin-bottom:20px;
+  p{
+    width:300px;
+  }
+}
+textarea{
+  width:280px;
+  height:280px;
+  font-size:13px;
+  letter-spacing:1px;
+  padding:10px;
+}
+input#solo_qn9, input#solo_qn10{
+  width:300px;
+  height:40px;
+  margin-bottom:10px;
+}
+
+input#solo-submit{
+  -webkit-appearance: none;
+  background-color:#17deee;
+  border:none;
+  color:lighten(black,30%);
+  padding:40px;
+  margin:40px;
+  font-size:20px;
+}
+input#solo-submit:hover{
+  background-color:#10aeb2;
+  color:white;
+}
+
+#delete-solo{
+  display:inline-block;
+  background-color:#ecf284;
+  border:none;
+  color:white;
+  padding:40px;
+  margin:40px;
+  font-size:20px;
+  text-decoration:none;
+}
+#delete-solo:visited{
+  color:white;
+}
+#delete-solo:hover{
+  background-color:#ff4162;
+}
+#edit-solo{
+  display:inline-block;
+  background-color:#17deee;
+  border:none;
+  color:lighten(black,30%);
+  padding:40px;
+  margin:40px;
+  font-size:20px;
+  text-decoration:none;
+}
+#edit-solo:visited{
+  color:lighten(black,30%);
+}
+#edit-solo:hover{
+  background-color:#10aeb2;
+  color:white;
+}

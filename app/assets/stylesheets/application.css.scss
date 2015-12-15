@@ -1,0 +1,112 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any styles
+ * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
+ * file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+
+html, body{
+  margin:0px;
+  padding:0px;
+}
+.notice, .alert{
+  
+}
+.navbar{
+  height:45px;
+  width:100%;
+  background-color:#ff7f50;
+  font-size:0px;
+  ul{
+    font-size:0px;
+    padding:0px;
+    margin:0px;
+    li{
+      list-style-type:none;
+      display:inline-block;
+      float:right;
+      color:white;
+      span{
+        display:inline-block;
+        padding:15px;
+        font-size:15px;
+        line-height:15px;
+      }
+      a{
+        display:inline-block;
+        font-size:15px;
+        line-height:15px;
+        padding:15px;
+      }
+      a:link{
+        color:white;
+        text-decoration:none;
+      }
+      a:visited{
+        color:white;
+      }
+    }
+  }
+}
+.navbar2{
+  height:45px;
+  width:100%;
+  background-color:#ecf284;
+  font-size:0px;
+  ul{
+    font-size:0px;
+    padding:0px;
+    margin:0px;
+    li{
+      list-style-type:none;
+      display:inline-block;
+      text-align:center;
+      font-size:15px;
+      color:#ff4162;
+      a{
+        display:inline-block;
+        font-size:15px;
+        line-height:15px;
+        padding:15px;
+        text-decoration:none;
+      }
+      a:link{
+        color:#ff4162;
+      }
+      a:visited{
+        color:#ff4162;
+      }
+    }
+  }
+}
+.container{
+  width:980px;
+  margin-left:auto;
+  margin-right:auto;
+}
+
+.tt-menu{
+  .tt-dataset{
+  background-color:white;
+  width:150px;
+  padding:0px;
+  text-align:left;
+    .tt-suggestion{
+      padding:3px 5px;
+    }
+    .tt-suggestion:hover{
+      background-color:#ff4162;
+      color:white;
+    }
+  }
+  
+}

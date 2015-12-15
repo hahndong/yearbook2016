@@ -1,0 +1,45 @@
+<h2><%= current_user.full_name %> Personal Submission</h2>
+<%= image_tag @solo.picture.url(:thumb) %>
+  <p>Quote</p>
+  <%= @solo.quote %>
+  <% if @solo.ans1.present? %><p>What is the most memorable event in SMU?</p><% end %>
+  <%= @solo.ans1 %>
+
+  <% if @solo.ans2.present? %><p>Who's your biggest crush in SMU?</p><% end %>
+  <%= @solo.ans2 %>
+
+  <% if @solo.ans3.present? %><p>QUESTION NUMBER 3!</p><% end %>
+  <%= @solo.ans3 %>
+
+  <% if @solo.ans4.present? %>
+    <p>What is the most memorable event in SMU?</p>
+    <%= @solo.ans4 %>
+  <% end %>
+
+  <% if @solo.ans5.present? %><p>What is the most memorable event in SMU?</p>
+  <%= @solo.ans5 %>
+  <% end %>
+
+  <% if @solo.ans6.present? %><p>What is the most memorable event in SMU?</p>
+  <%= @solo.ans6 %>
+  <% end %>
+
+  <% if @solo.ans7.present? %><p>What is the most memorable event in SMU?</p>
+  <%= @solo.ans7 %>
+  <% end %>
+
+  <% if @solo.ans8.present? %><p>What is the most memorable event in SMU?</p><% end %>
+  <%= @solo.ans8 %>
+
+  <% if @solo.qn9.present? %>
+  <%= @solo.qn9 %>
+  <%= @solo.ans9 %>
+  <% end %>
+
+  <% if @solo.qn10.present? %>
+  <%= @solo.qn10 %>
+  <%= @solo.ans10 %>
+  <% end %>
+<div style="clear:both"></div>
+<%= link_to 'Edit', edit_solo_path(@solo), id:"edit-solo" %>
+<%= link_to 'Delete', @solo, method: :delete, data: { confirm: 'Are you sure?' }, id: "delete-solo" %>

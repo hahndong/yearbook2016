@@ -1,0 +1,48 @@
+// Place all the styles related to the groups controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+.center{
+  text-align:center;
+}
+.group{
+  vertical-align:middle;
+  position:relative;
+  display:inline-block;
+  margin:0px;
+  padding:0px 15px 15px 0px;
+  width:300px;
+  height:300px;
+  text-align:center;
+
+  .image-box{
+    top:50%;
+    -webkit-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
+    position:relative;
+    display:inline-block;
+    img{
+      position:relative;
+    }
+    .group-cover{
+      position:absolute;
+      bottom:40px;
+      color:white;
+      margin:0px;
+      padding:5px 20px;
+      height:20px;
+      line-height:20px;
+      font-size:13px;
+      background-color:#10aeb2;
+      a{
+        color:white;
+      }
+      a:visited{
+        color:white;
+      }
+    }
+  }
+  p{
+  margin:0px;
+  }
+}

@@ -1,0 +1,12 @@
+<p id="notice"><%= notice %></p>
+You have <%= current_user.groups.count %> group picture(s).</br>
+<% n = 0%>
+<% current_user.groups.each do |d| %>
+<% n += 1 %>
+<%= link_to "Group Picture #{n} (edit)", edit_group_path(d) %></br>
+<% end %>
+<%= link_to "Submit a new group picture", new_group_path %>
+
+<br>
+<h2>Group Pictures</h2>
+<%= render @groups %>

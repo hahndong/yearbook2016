@@ -1,0 +1,31 @@
+<div class="center">
+  <h1>Edit Group Submission</h1>
+
+<%= simple_form_for(@group) do |f| %>
+  <%= f.error_notification %>
+
+  <div class="form-inputs">
+    <%= image_tag @group.picture.url(:thumb) %>
+    
+    <p>From left to right, front to back:</br>
+      Only accountancy students can be tagged. :)</p>
+      
+     1 <%= text_field_tag :user1, @users[0] %></br>
+     2 <%= text_field_tag :user2, @users[1] %></br>
+     3 <%= text_field_tag :user3, @users[2] %></br>
+     4 <%= text_field_tag :user4, @users[3]  %></br>
+     5 <%= text_field_tag :user5, @users[4] %></br>
+     6 <%= text_field_tag :user6, @users[5]  %></br>
+     7 <%= text_field_tag :user7, @users[6] %></br>
+     8 <%= text_field_tag :user8, @users[7]  %></br>
+     9 <%= text_field_tag :user9, @users[8]  %></br>
+    10 <%= text_field_tag :user10, @users[9]  %></br>
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit, value: "Update" %>
+  </div>
+<% end %>
+
+  <%= link_to 'Delete Group Picture', @group, method: :delete, data: { confirm: 'Are you sure?' } %>
+</div>
