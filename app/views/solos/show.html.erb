@@ -2,33 +2,40 @@
 <%= image_tag @solo.picture.url(:thumb) %>
   <p>Quote</p>
   <%= @solo.quote %>
-  <% if @solo.ans1.present? %><p>What is the most memorable event in SMU?</p><% end %>
+  <% if @solo.ans1.present? %>
+  <p>Finish the sentence: I will always remember.. </p><% end %>
   <%= @solo.ans1 %>
 
-  <% if @solo.ans2.present? %><p>Who's your biggest crush in SMU?</p><% end %>
+  <% if @solo.ans2.present? %>
+  <p>The one thing I regret most in SMU is.. </p><% end %>
   <%= @solo.ans2 %>
 
-  <% if @solo.ans3.present? %><p>QUESTION NUMBER 3!</p><% end %>
+  <% if @solo.ans3.present? %>
+  <p>In 20 years time, I will.. </p><% end %>
   <%= @solo.ans3 %>
 
   <% if @solo.ans4.present? %>
-    <p>What is the most memorable event in SMU?</p>
+    <p>My biggest crush in SMU is.. </p>
     <%= @solo.ans4 %>
   <% end %>
 
-  <% if @solo.ans5.present? %><p>What is the most memorable event in SMU?</p>
+  <% if @solo.ans5.present? %>
+  <p>My favourite professor in SMU is.. </p>
   <%= @solo.ans5 %>
   <% end %>
 
-  <% if @solo.ans6.present? %><p>What is the most memorable event in SMU?</p>
+  <% if @solo.ans6.present? %>
+  <p>If I could go back to to my freshmen year, I would.. </p>
   <%= @solo.ans6 %>
   <% end %>
 
-  <% if @solo.ans7.present? %><p>What is the most memorable event in SMU?</p>
+  <% if @solo.ans7.present? %>
+  <p>One movie that describes your life in SMU.</p>
   <%= @solo.ans7 %>
   <% end %>
 
-  <% if @solo.ans8.present? %><p>What is the most memorable event in SMU?</p><% end %>
+  <% if @solo.ans8.present? %>
+  <p>Funny Quote</p><% end %>
   <%= @solo.ans8 %>
 
   <% if @solo.qn9.present? %>
