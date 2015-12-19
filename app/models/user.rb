@@ -40,6 +40,8 @@ class User < ActiveRecord::Base
   end
   after_save :set_invit
   def set_invit
-    self.invit ||= 0
+    a = self.invit 
+    a ||= 0
+    self.update_attribute(:invit, a)
   end
 end
