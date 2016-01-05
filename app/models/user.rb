@@ -2,8 +2,8 @@ class User < ActiveRecord::Base
   acts_as_token_authenticatable
 
   def send_invit
-    invit = self.invit + 1
-    self.update_attribute(:invit, invit)
+    #invit = self.invit + 1
+    #self.update_attribute(:invit, invit)
     SendToUsers.invitation(self).deliver
   end
 
@@ -36,11 +36,11 @@ class User < ActiveRecord::Base
   after_initialize :set_default_role, :if => :new_record?
   def set_default_role
     self.role ||= :user
-    
+    self.invit ||= 0
   end
 
   # before_save :set_invit
-  def set_invit
-    self.update_attribute(:invit, 0)
-  end
+  #def set_invit
+  #  self.update_attribute(:invit, 0)
+  #end
 end
