@@ -38,10 +38,9 @@ class User < ActiveRecord::Base
     self.role ||= :user
     
   end
-  after_save :set_invit
+
+  # before_save :set_invit
   def set_invit
-    a = self.invit 
-    a ||= 0
-    self.update_attribute(:invit, a)
+    self.update_attribute(:invit, 0)
   end
 end
