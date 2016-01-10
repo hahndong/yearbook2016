@@ -3,7 +3,7 @@
 </div>
 
 <div class="home">
-  <p class="homelink"><%= link_to "HOME", root_path %> > <%= link_to "SOLO", solos_path %> > <%= solo.user.full_name.upcase %></p>
+  <p class="homelink"><%= link_to "HOME", root_path %> > <%= link_to "SOLO", solos_path %> > <%= @solo.user.full_name.upcase %></p>
   <%= image_tag @solo.picture.url(:thumb), class: "middle" %>
   <%= image_tag @solo.picture.url(:print), class: "middle" %>
 </div>
