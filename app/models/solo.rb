@@ -24,8 +24,11 @@ class Solo < ActiveRecord::Base
   end
   
   def avatar_geometry(style = :original)
+    
     @geometry ||= {}
-    @geometry[style] ||= Paperclip::Geometry.from_file(picture.path(style))
+    avatar_path = (avatar.options[:storage] == :s3) ? avatar.url(style) : avatar.path(style)
+    @geometry[style] ||= Paperclip::Geometry.from_file(avatar_path)
+    # @geometry[style] ||= Paperclip::Geometry.from_file(picture.path(style))
   end
   
   private
