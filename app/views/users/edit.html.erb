@@ -1,1 +1,13 @@
-<%= render 'form' %>
+<div class="picture1crop">
+	<p>PROFILE</p>
+</div>
+
+<div class="home">
+	<p class="homelink"><%= link_to "HOME", root_path %> > PROFILE</p>
+	<p class="middle pricing"><%= @user.full_name %></p>
+	<p class="middle tallcolumns">
+		<%= @user.email if @user.email %></br>
+	</p>
+	<%= render 'form' %>
+</div>
+

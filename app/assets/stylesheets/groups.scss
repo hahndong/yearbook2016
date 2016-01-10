@@ -4,6 +4,19 @@
 .center{
   text-align:center;
 }
+.group-form{
+  font-family:din;
+  input{
+    width:400px;
+    height:40px;
+    font-family:din;
+    font-size:25px;
+    
+    margin-left:50%;
+    transform: translateX(-50%);
+    margin-bottom:20px;
+  }
+}
 .group{
   vertical-align:middle;
   position:relative;
@@ -33,7 +46,7 @@
       height:20px;
       line-height:20px;
       font-size:13px;
-      background-color:#10aeb2;
+      
       a{
         color:white;
       }

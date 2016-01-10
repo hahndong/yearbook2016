@@ -1,10 +1,7 @@
-<div class="solo", id= <%= "solo#{solo.id}" %> >
-<div class="solo-box">
-<%= image_tag solo.picture.url(:thumb) %>>
-<div class="solo-quote"><p style="margin-top:75px;"><%=h truncate(solo.quote, length: 80) %></p>
-  <%if solo.quote.length > 80 %>
-  <p>Full quote is available in the year book.</p>
-  <% end %></div>
-<p class="solo-name"><%= solo.user.name %></p>
-</div>
-</div>
+
+	<div class="center inline-block">
+		<div class="solo">
+		<%= image_tag solo.picture.url(:disp) %>
+		</br><%= solo.user.full_name %>
+		</div>
+	</div>

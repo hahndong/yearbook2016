@@ -1,20 +1,29 @@
 // Place all the styles related to the solos controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+.solos-box{
+    width:90%;
+    margin-left:auto;
+    margin-right:auto;
+    position:relative;
+    padding-bottom:100px;
+    text-align:center;
+  }
+.upload-picture{
+  margin-left:50%;
+  transform: translateX(-50%);
+  width:165px;
+  margin-top:-300px;
+}
 .solo{
   position:relative;
   display:inline-block;
   margin:0px;
-  padding:0px 20px 20px 0px;
-  font-size:0px;
-  height:300px;
-  width:300px;
+  padding:10px;
+  font-family:din;
   text-align:center;
-  .solo-box{
-    
-    position:relative;
-    display:inline-block;
-  }
+  margin-left:auto;
+
   .solo-quote{
     display:none;
     position: absolute;
@@ -47,10 +56,40 @@
   }
 }
 .solo-questions{
+  clear:both;
+  margin-top:235px;
   display:block-inline;
-  width:302px;
-  float:left;
-  padding-right:20px;
+  margin-left:50%;
+  transform: translateX(-50%);
+  text-align:center;
+  width:845px;
+  .lorem-box{
+      vertical-align: top;  
+      width:165px;
+      height:165px;
+      padding:0px;
+      margin:0px;
+      text-align:justify;
+      font-size:12px;
+      font-family:din;
+      display:inline-block;
+  }
+  .input{
+    display:inline-block;
+    width:165px;
+    height:165px;
+    textarea#solo_quote{
+      width:163px;
+      height:163px;
+      padding:0px;
+      margin:0px;
+      
+      
+      text-align:justify;
+      font-size:12px;
+      font-family:din;
+    } 
+  }
   p{
     font-size:15px;
     height:30px;
@@ -77,10 +116,10 @@ input#solo_qn9, input#solo_qn10{
 
 input#solo-submit{
   -webkit-appearance: none;
-  background-color:#17deee;
+  display:inline-block;
   border:none;
-  color:lighten(black,30%);
-  padding:40px;
+  
+  padding:20px 40px;
   margin:40px;
   font-size:20px;
 }
@@ -90,11 +129,11 @@ input#solo-submit:hover{
 }
 
 #delete-solo{
+  background-color:#C1C1C1;
   display:inline-block;
-  background-color:#ecf284;
   border:none;
   color:white;
-  padding:40px;
+  padding:20px 40px;
   margin:40px;
   font-size:20px;
   text-decoration:none;
@@ -121,4 +160,11 @@ input#solo-submit:hover{
 #edit-solo:hover{
   background-color:#10aeb2;
   color:white;
+}
+.lookblank{
+  width:118px;
+  height:366px;
+  border:3px solid #2E75B6;
+  display:inline-block;
+
 }

@@ -1,2 +1,21 @@
-<p> <%= @user.email %> | <%= @user.full_name %> | <%= @user.name%> | <%= @user.address %> | <%= @user.mobile_number %></p>
+<div class="picture1crop">
+	<p>PROFILE</p>
+</div>
 
+<div class="home">
+	<p class="homelink"><%= link_to "HOME", root_path %> > PROFILE</p>
+	<p class="middle pricing"><%= @user.full_name %></p>
+	<p class="middle tallcolumns center">
+		<%= @user.email if @user.email %></br>
+		</br>
+		<%= @user.facebook if @user.facebook %></br>
+		</br>
+		<%= @user.mobile_number if @user.mobile_number %></br>
+		</br>
+		
+		<%= link_to "EDIT", edit_user_path(current_user)%></br>
+		</br>
+
+	</p>
+	<p class="middle designdescription">Leave us your contacts so that we can contact you when the year book is ready!</p>
+</div>

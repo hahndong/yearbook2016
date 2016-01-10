@@ -1,5 +1,11 @@
-<h2><%= current_user.full_name %> Personal Submission</h2>
-<%= image_tag @solo.picture.url(:thumb) %>
+<div class="picture1crop">
+  <p>SOLO</p>
+</div>
+
+<div class="home">
+  <p class="homelink"><%= link_to "HOME", root_path %> > <%= link_to "SOLO", solos_path %> > <%= current_user.full_name.upcase %></p>
+  <%= image_tag @solo.picture.url(:thumb), class: "middle" %>
+</div>
   <p>Quote</p>
   <%= @solo.quote %>
   <% if @solo.ans1.present? %>
@@ -48,5 +54,3 @@
   <%= @solo.ans10 %>
   <% end %>
 <div style="clear:both"></div>
-<%= link_to 'Edit', edit_solo_path(@solo), id:"edit-solo" %>
-<%= link_to 'Delete', @solo, method: :delete, data: { confirm: 'Are you sure?' }, id: "delete-solo" %>

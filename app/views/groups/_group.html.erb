@@ -1,7 +1,7 @@
 <% if user_signed_in? %>
 <div class="group">
   <div class="image-box"><%= image_tag group.picture.url(:thumb) %>
-  <p class="group-cover"><%= group.users.collect(&:name).join(", ") %>
+  <p class="group-cover"><%= group.users.collect(&:full_name).join(", ") %>
   <% if group.users.include?(current_user) %>
   <%= link_to 'Edit', edit_group_path(group) %>
   <% end %>

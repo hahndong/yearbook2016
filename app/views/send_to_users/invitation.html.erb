@@ -5,7 +5,7 @@
 
 <p>You may upload your picture in the following link. Also you may also check out what others have post. *grins* So what are you waiting for!</p>
 
-<%= link_to 'See what others have posted!', solos_url(user_token: @user.authentication_token, user_email: @user.email) %>
+<%= link_to 'See what others have posted!', email_invit_url(user_token: @user.authentication_token, user_email: @user.email) %>
 
 
 <p>Sincerely,</br>

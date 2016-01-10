@@ -1,0 +1,51 @@
+<div class="picture1"></div>
+<div style="height:71px; width:auto;">
+<div class="topright">
+	<% if user_signed_in? %>
+	<ul>
+        <li style="border:3px solid #D0D0D0; padding:0px 20px;"><span>LOGGED IN AS <%= current_user.full_name.upcase %></span></li>
+        <li><%= link_to('LOG OUT', destroy_user_session_path, :method => :delete) %></li>
+    </ul>
+    <% end %>
+</div>
+</div>
+<div class="landingwords">
+	
+	<p class="storyofourlives">STORY OF OUR</br>LIVES </p>
+	<p class="schoolofaccountancy">SCHOOL OF ACCOUNTANCY</br>GRADUATING CLASS OF 2016</p>
+</div>
+
+<% if user_signed_in? %>
+<div class="menu-items">
+	<%= link_to solos_path do %> 
+    <div class="circle">
+    <p>SOLO</p>
+    </div>
+    <% end %>
+
+    <%= link_to groups_path do %> 
+    <div class="circle">
+    <p>GROUP</p>
+    
+    </div>
+    <% end %>
+
+    <%= link_to pricing_path do %> 
+    <div class="circle">
+    <p>PRICING</p>
+    </div>
+    <% end %>
+
+    <%= link_to edit_user_path(current_user) do %> 
+    <div class="circle">
+    <p>PROFILE</p>
+    </div>
+    <% end %>
+
+    <%= link_to design_path do %> 
+    <div class="circle">
+    <p>DESIGN</p>
+    </div>
+    <% end %>
+</div>
+<% end %>

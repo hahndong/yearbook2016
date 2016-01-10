@@ -3,7 +3,7 @@ include Pundit
   rescue_from Pundit::NotAuthorizedError, with: :user_not_authorized
   protect_from_forgery with: :exception
   before_action :authenticate_user!
-  after_action :verify_authorized
+  after_action :verify_authorized, except: [:update, :destroy]
   before_action :set_group, only: [:show, :edit, :update, :destroy]
 
   def index
@@ -24,21 +24,22 @@ include Pundit
   def edit
     @users = @group.users.collect(&:full_name).uniq
     authorize @group
-
   end
 
   def create
     @group = Group.new(group_params)
+    
     set_users
-    respond_to do |format|
-      if @group.save
-        format.html { redirect_to @group, notice: 'Group was successfully created.' }
-        format.json { render :show, status: :created, location: @group }
-      else
-        format.html { render :new }
-        format.json { render json: @group.errors, status: :unprocessable_entity }
-      end
+    if @group.users.include?(current_user)
+        if @group.save
+          redirect_to edit_group_path(@group), notice: 'Group was successfully created.'
+        else
+          redirect_to new_group_path
+        end
+    else
+      redirect_to new_group_path
     end
+    
     authorize @group
   end
 
@@ -46,22 +47,24 @@ include Pundit
     @users = User.where(:id => params[:user])
     @group.users.destroy_all
     set_users
-    if @group.save
-      redirect_to @group, notice: 'Group was successfully updated.'
+    if @group.users.include?(current_user)
+      if @group.save
+        redirect_to edit_group_path(@group), notice: 'Group was successfully updated.'
+      else
+        redirect_to edit_group_path(@group)
+      end
     else
-      render :edit
+
+      redirect_to edit_group_path(@group)
     end
-    authorize @group
+    
   end
 
   def destroy
-    @group.users.destroy_all
+    
     @group.destroy
-    respond_to do |format|
-      format.html { redirect_to groups_url, notice: 'Group was successfully destroyed.' }
-      format.json { head :no_content }
-    end
-    authorize @group
+    redirect_to groups_path, notice: 'Group was successfully destroyed.'
+    
   end
 
   def typeahead

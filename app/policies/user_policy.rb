@@ -25,5 +25,8 @@ class UserPolicy
   def typeahead?
     @current_user.user? || @current_user.admin?
   end
+  def send_invit?
+    @current_user.admin?
+  end
 
 end

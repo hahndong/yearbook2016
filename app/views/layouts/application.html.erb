@@ -10,43 +10,12 @@
   <% else %>
     <% java_to_load = 'null' %>
   <% end %>
-  <%= javascript_include_tag 'application', java_to_load, 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'jquery-1.11.3.min.js', 'application', java_to_load,  'data-turbolinks-track' => true %>
+  <%= yield (:head) %>
   <%= csrf_meta_tags %>
 </head>
 <body>
-<div class="navbar">
-  <div class="container">
-    <ul>
-      <li style="float:left;">SMU <span>Accountancy Graduating Class of 2016 Year Book</span></li>
-      <% if user_signed_in? %>
-        <li><%= link_to('Logout', destroy_user_session_path, :method => :delete) %></li>
-        <li><span>Logged in as </span><%= link_to "#{current_user.full_name}", edit_user_path(current_user) %></li>
-      <% else %>
-        <li style="font-size:14px;padding:13px;">No Access Outsiders</li>
-      <% end %>
-    </ul>
-  </div>
-</div>
-<div class="navbar2">
-  <div class="container">
-    <ul>
-      <% if user_signed_in? %>
-      <li><%= link_to "Solo Pictures", solos_path %></li>
-      <li><%= link_to "Group Picture", groups_path %></li>
-      <li><%= link_to "Designer Needed", solos_designs_path %></li>
-      <% end %>
-    </ul>
-  </div>
-</div>
-<div class="container">
-  <% if notice %>
-  <p class="notice"><%= notice %></p>
-  <% end %>
-  <% if alert %>
-  <p class="alert"><%= alert %></p>
-  <% end %>
-</div>
-<div class="container">
+
 <%= yield %>
 </div>
 </body>

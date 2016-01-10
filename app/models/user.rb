@@ -2,8 +2,9 @@ class User < ActiveRecord::Base
   acts_as_token_authenticatable
 
   def send_invit
-    #invit = self.invit + 1
-    #self.update_attribute(:invit, invit)
+    self.invit = 0 if self.invit == nil
+    invit = self.invit + 1
+    self.update_attribute(:invit, invit)
     SendToUsers.invitation(self).deliver
   end
 

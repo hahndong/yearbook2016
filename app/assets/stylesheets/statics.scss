@@ -1,0 +1,313 @@
+// Place all the styles related to the statics controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+.picture1{
+  background-image: asset-url("picture1.jpg");
+  background-repeat:no-repeat;
+  background-size:cover;
+  background-position:top;
+  position:absolute;
+  height:100%;
+  width:100%;
+  z-index:-2;
+}
+.topright{
+	float:right;
+	padding-right:15%;
+	
+	ul{
+		padding-top:15px;
+		font-size:0px;
+		color:#D0D0D0;
+		li{
+			list-style-type: none;
+			display:inline-block;
+			span{
+				display:inline-block;
+				padding:15px 0px;
+				font-size:20px;
+				line-height:20px;
+				font-family:din;
+			}
+			a{
+				display:inline-block;
+				padding:15px 20px;
+				margin-right:-20px;
+				font-size:20px;
+				line-height:20px;
+				font-family:din;
+				border:3px solid transparent;	
+			}
+			a:link{
+				color:#D0D0D0;
+				text-decoration:none;
+			}
+			a:hover{
+				color:#4191BC;
+				background-color:#D0D0D0;
+				border-color:#D0D0D0;
+			}
+			a:visited{
+				color:#D0D0D0;
+			}
+		}
+	}
+
+}
+.landingwords{
+	clear:both;
+	position:relative;
+	padding-top:50px;
+	padding-right: 15%;
+	color:white;
+	width:519px;
+	height:300px;
+	float:right;
+	.smu{
+		position:relative;
+		display:inline-block;
+		font-family:tra;
+		font-size:15px;
+	}
+	.storyofourlives{
+		position:relative;
+		padding:0px;
+		display:inline-block;
+		font-family:din;
+		margin:0px;	
+		font-size:120px;
+		line-height:151px;
+		
+	}
+	.schoolofaccountancy{
+		position:relative;
+		top:-102px;
+		float:right;
+		font-family:din;
+		font-size:32px;
+		line-height:32px;
+		text-align:right;
+		margin:0px;
+		
+	}
+}
+@media screen and (max-width: 1080px){
+	.landingwords{
+		padding-top:0px;
+		padding-right:5%;	
+	}
+	.topright{
+		padding-right:5%;
+	}
+}
+
+@media screen and (max-width: 800px){
+	.landingwords{
+		width:432px;
+		top:66px;
+		.storyofourlives{
+			font-size:100px;
+			line-height:125px;
+		}
+		.schoolofaccountancy{
+			top:-80px;
+			font-size:25px;
+			line-height:25px;
+			span{
+				font-size:20px;
+			}
+		}
+
+		.menu-items{
+			padding-top:80px;
+		}
+	}
+}
+
+
+  
+
+.menu-items{
+	clear:both;
+	padding-top:65px;
+	margin-left:50%;
+	width:100%;
+	text-align:center;
+	transform: translateX(-50%);
+	a{
+    	text-decoration:none;
+    }
+	a:hover{
+		color:#123364;
+		background-color:transparent;
+	}
+	a:visted{
+		color:white;
+	}
+	.circle{
+    position:relative;
+    display:inline-block;
+    height:70px;
+    width:70px;
+    margin-top:0px;
+    
+    margin-right:5%;
+    margin-left:5%;
+    border:2px solid white;
+    border-radius:50px;
+    text-align:center;
+    font-size:28px;
+    line-height:24px;
+    font-weight:900;
+    color:white;
+    z-index:99;
+    p{
+      	margin: 0px;
+	    padding-top: 29px;
+	    font-family: din;
+	    font-size: 22px;
+	    letter-spacing: 1px;
+	    text-decoration:white;
+    }
+  }
+}
+.circle:hover{
+	background-color:white;
+	color:#123364;
+}
+.picture1crop{
+  background-image: asset-url("picture1crop.jpg");
+  background-repeat:no-repeat;
+  background-size:cover;
+  background-position:top;
+  position:absolute;
+  height:150px;
+  width:100%;
+  z-index:-2;
+  p{
+  	font-family:din;
+  	font-size:70px;
+  	text-align:center;
+  	letter-spacing:3px;
+	color:white;
+  }
+}
+.middle{
+	margin-left:50%;
+	transform: translateX(-50%);
+	display:inline-block;
+}
+.home{
+	clear:both;
+	
+	padding-top:150px;
+	.homelink{
+		margin-left:5%;
+		font-family:din;
+		font-size:20px;
+		color:#595959;
+		letter-spacing:2px;	
+	}
+	a:link{
+		color:#123364;
+		
+	}
+	a:hover{
+		background-color:transparent;
+	}
+	a:visited{
+		color:#123364;
+	}
+	.pricing{
+		width:485px;
+		font-size:30px;
+		line-height:40px;
+		color:#595959;
+		font-family:din;
+		text-align:center;
+		margin-top:50px;
+		border:3px solid black;
+		display:inline-block;
+		
+		padding:40px 80px;
+		
+	}
+	.working{
+		clear:both;
+		margin-top:50px;
+		width:485px;
+		margin-left:50%;
+		transform: translateX(-50%);
+		p{
+			margin-right:23%;
+			text-align:right;
+			font-family:din;
+			font-size:20px;
+			line-height:24px;
+			color:#595959;
+		}
+	}
+	.center{
+		text-align:center;
+	}
+	.tallcolumns{
+		font-family:din;
+		font-size:25px;
+		margin-top:20px;
+	}
+	.designdescription{
+		font-family:din;
+		font-size:15px;
+		line-height:15px;
+	}
+	input#user_facebook{
+		width:400px;
+		height:40px;
+		font-family:din;
+		font-size:25px;
+		text-align:center;
+		margin-left:50%;
+		transform: translateX(-50%);
+		margin-bottom:20px;
+	}
+	input#user_mobile_number{
+		width:400px;
+		height:40px;
+		font-family:din;
+		font-size:25px;
+		text-align:center;
+		margin-left:50%;
+		transform: translateX(-50%);
+		margin-bottom:20px;	
+	}
+	input#profile_submit{
+		  -webkit-appearance: none;
+		  
+		  text-align:center;
+		  border:none;
+		  padding:20px 40px;
+		  margin:40px;
+		  font-size:20px;
+		  margin-left:50%;
+		  transform:translateX(-50%);
+	}
+	#profile_submit:hover{
+		color:white;
+		background-color: gray;
+	}
+}
+input#profile_submit{
+		-webkit-appearance: none;
+  display:inline-block;
+  border:none;
+  
+  padding:20px 40px;
+  margin:40px;
+  font-size:20px;
+	}
+	#profile_submit:hover{
+		color:white;
+		background-color: gray;
+	}
+

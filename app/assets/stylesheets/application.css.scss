@@ -14,9 +14,35 @@
  *= require_self
  */
 
+@font-face{
+  font-family: 'din';
+   src:asset-url('din.eot');
+    src:asset-url('din.eot') format('embedded-opentype'),
+        asset-url('din.ttf') format('truetype'),
+        asset-url('din.woff') format('woff'),
+        asset-url('din.svg') format('svg');
+}
+
+@font-face{
+  font-family: 'tra';
+   src:asset-url('tra.eot');
+    src:asset-url('tra.eot') format('embedded-opentype'),
+        asset-url('tra.ttf') format('truetype'),
+        asset-url('tra.woff') format('woff'),
+        asset-url('tra.svg') format('svg');
+}
 html, body{
   margin:0px;
   padding:0px;
+  overflow-x:hidden;
+  
+  width:100%;
+}
+.inline-block{
+  display:inline-block;
+}
+::-webkit-scrollbar { 
+    display: none; 
 }
 .notice, .alert{
   

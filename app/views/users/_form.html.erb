@@ -1,15 +1,10 @@
 <%= simple_form_for(@user) do |f| %>
   <%= f.error_notification %>
 
-  <div class="form-inputs">
-    <%= f.input :full_name, readonly: true %>
-    <%= f.input :name %>
-    <%= f.input :address %>
-    <%= f.input :mobile_number %>
+    <%= f.input :facebook, label: false, placeholder: "FACEBOOK (www.facebook.com/jon.snow)"%>
+    <%= f.input :mobile_number, label: false, placeholder: "MOBILE NUMBER"%>
 
-  </div>
-
-  <div class="form-actions">
-    <%= f.button :submit %>
-  </div>
+  
+    <%= f.button :submit, value: "SUBMIT", id: "profile_submit" %>
+  
 <% end %>

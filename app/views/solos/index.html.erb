@@ -1,14 +1,27 @@
+<div class="picture1crop">
+	<p>SOLO</p>
+</div>
+
+<div class="home">
+	<p class="homelink"><%= link_to "HOME", root_path %> > SOLO  
+<% if user_signed_in? %>
+  <% if current_user.solo %>
+  
+  > <%= link_to "EDIT", edit_solo_path(current_user.solo.id) %> 
+  <% end %>
+<% end %></p>
+
 
 <% if user_signed_in? %>
-  <% unless current_user.solo %>
-  <h2>Personal Submission For <% if current_user.name.blank? %><%= link_to "<Enter name to appear on year book>", edit_user_path(current_user) %><% else %><%= link_to "#{current_user.name}", edit_user_path(current_user) %><% end %></h2>
-    <%= render 'form' %>
-  <% else %>
-  <p>You have submitted your picture. <%= link_to "Click here to edit your submission", edit_solo_path(current_user.solo.id) %></p>
+  <% unless current_user.solo %>  
+<p class="pricing middle"><%= link_to "Submit your picture here", new_solo_path %></p>
   <% end %>
-
-  <h2>>Personal Pictures</h2>
-  <%= render @solos %>
-<% else %>
-  SMU Accountancy Graduating Class of 2016
 <% end %>
+<div class="solos-box">
+<%= render @solos %>
+</div>
+
+	
+
+	
+</div>

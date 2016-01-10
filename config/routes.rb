@@ -1,5 +1,8 @@
 Rails.application.routes.draw do
-  root 'solos#index'
+  root 'statics#landing_page'
+  get '/email_invit' => 'statics#email_invit'
+  get '/pricing' => 'statics#pricing'
+  get '/design' => 'statics#design'
   get 'groups/typeahead.json' => 'groups#typeahead'
   resources :groups
   get 'solos/designs' => 'solos#designs'
@@ -7,6 +10,6 @@ Rails.application.routes.draw do
   get 'solos/thankyou' => 'solos#thankyou'
   resources :solos
   devise_for :users , :skip => [:registrations, :passwords]   
-
+  get 'users/sent_invit' =>'users#send_invit', defaults: { :format => 'js' }
   resources :users, except: [:new, :create, :destroy]
 end

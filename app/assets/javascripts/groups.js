@@ -79,4 +79,48 @@ $(document).ready(function(){
     source: user_suggestions.ttAdapter(),
     limit: 10
   });
+
+  $('input#user7').typeahead({
+    hint: true,
+    highlight: true,
+    minLength: 1
+  }, {
+    name: 'full_name',
+    displayKey: 'full_name',
+    source: user_suggestions.ttAdapter(),
+    limit: 10
+  });
+
+  $('input#user8').typeahead({
+    hint: true,
+    highlight: true,
+    minLength: 1
+  }, {
+    name: 'full_name',
+    displayKey: 'full_name',
+    source: user_suggestions.ttAdapter(),
+    limit: 10
+  });
+
+  $('input#user9').typeahead({
+    hint: true,
+    highlight: true,
+    minLength: 1
+  }, {
+    name: 'full_name',
+    displayKey: 'full_name',
+    source: user_suggestions.ttAdapter(),
+    limit: 10
+  });
+
+  $('input#user10').typeahead({
+    hint: true,
+    highlight: true,
+    minLength: 1
+  }, {
+    name: 'full_name',
+    displayKey: 'full_name',
+    source: user_suggestions.ttAdapter(),
+    limit: 10
+  });
 });

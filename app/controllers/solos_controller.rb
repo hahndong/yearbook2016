@@ -30,21 +30,34 @@ class SolosController < ApplicationController
   def create
     @solo = Solo.new(solo_params)
     @solo.user_id = current_user.id
-    respond_to do |format|
-      if @solo.save
-        format.html { redirect_to @solo, notice: 'Solo was successfully created.' }
-        format.json { render :show, status: :created, location: @solo }
+    
+    if @solo.save
+      if params[:solo][:picture].blank?
+        redirect_to @solo, notice: 'Submitted successfully.'
       else
-        format.html { render :new }
-        format.json { render json: @solo.errors, status: :unprocessable_entity }
+        render :action => "crop"
+
       end
+    else
+      render :action => "new"
+      
     end
+  
     authorize @solo
   end
 
   def update
     if @solo.update(solo_params)
-      redirect_to @solo, notice: 'Solo was successfully updated.'
+      if params[:solo][:picture].blank? && params[:solo][:crop_x].blank?
+          
+          redirect_to edit_solo_path(@solo), notice: 'Updated successfully.'
+      elsif params[:solo][:picture].blank? 
+          @solo.picture.reprocess!
+          redirect_to edit_solo_path(@solo), notice: 'Updated successfully.'
+      else
+          render :action => "crop"
+          
+        end
     else
       render :edit
     end
@@ -81,6 +94,6 @@ class SolosController < ApplicationController
     end
 
     def solo_params
-      params.require(:solo).permit(:picture, :quote, :ans1, :ans2, :ans3, :ans4, :ans5, :ans6, :and7, :ans8, :qn9, :ans9, :qn10, :ans10)
+      params.require(:solo).permit(:picture, :quote, :ans1, :ans2, :ans3, :ans4, :ans5, :ans6, :and7, :ans8, :qn9, :ans9, :qn10, :ans10, :crop_x, :crop_y, :crop_w, :crop_h)
     end
 end

@@ -1,1 +1,16 @@
-<p><%= user.id %> | <%= user.email %> | <%= user.full_name %> | <%= user.name%> | <%= user.address %> | <%= user.mobile_number %></p>
+<p><div style="width:50px; display:inline-block"><%= user.id %></div> | 
+	<div style="width:250px; display:inline-block"><%= user.full_name %></div> | 
+	<% if user.solo %> 
+	<div style="color:blue; width:80px; display:inline-block"> POSTED </div> 
+	<% else %> 
+	<div style="color:red; width:80px; display:inline-block">NOT POSTED</div>
+	<% end %>
+	|
+	<% if user.invit != nil %> 
+	<div style="color:blue; width:80px; display:inline-block"> INVIT SENT </div> 
+	<% else %> 
+	<div style="color:red; width:80px; display:inline-block", id="user<%= user.id %>">NOT SENT</div>
+	<% end %>
+	| <%= link_to "Send invit to #{user.full_name}", users_sent_invit_path(user_id: user.id), remote: true %> </p><p>
+ &nbsp&nbsp&nbsp&nbsp<%= email_invit_url(user_token: user.authentication_token, user_email: user.email) %> </p>
+</br>

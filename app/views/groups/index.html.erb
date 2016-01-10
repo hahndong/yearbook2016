@@ -1,12 +1,22 @@
-<p id="notice"><%= notice %></p>
-You have <%= current_user.groups.count %> group picture(s).</br>
-<% n = 0%>
-<% current_user.groups.each do |d| %>
-<% n += 1 %>
-<%= link_to "Group Picture #{n} (edit)", edit_group_path(d) %></br>
-<% end %>
-<%= link_to "Submit a new group picture", new_group_path %>
+<div class="picture1crop">
+	<p>GROUP</p>
+</div>
 
-<br>
-<h2>Group Pictures</h2>
+<div class="home">
+	<p class="homelink"><%= link_to "HOME", root_path %> > GROUP </p>
+
+
+<% if user_signed_in? %>
+  <p class="homelink">
+  <% if current_user.groups.count == 0 %>  
+  You have no group picture.
+  <% else %>
+	You have <%= current_user.groups.count %> group picture(s).
+  <% end %>
+  <p>
+  <p class="homelink"><%= link_to "Submit group picture", new_group_path %></p>
+<% end %>
+<div class="solos-box">
 <%= render @groups %>
+</div>
+</div>

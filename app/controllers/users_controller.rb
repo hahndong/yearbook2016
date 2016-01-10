@@ -5,7 +5,7 @@ class UsersController < ApplicationController
   before_action :authenticate_user!
   after_action :verify_authorized
   def index
-    @users = User.all
+    @users = User.all.order(full_name: :asc)
     authorize User
   end
 
@@ -25,8 +25,17 @@ class UsersController < ApplicationController
     authorize @user
   end
 
+  def send_invit
+    @user = User.find(params[:user_id])
+    @user.send_invit
+  respond_to do |format|
+    format.js
+  end
+  authorize @user
+  end
+
   private
   def user_params
-    params.require(:user).permit(:full_name, :name, :address, :mobile_number)
+    params.require(:user).permit(:full_name, :name, :address, :mobile_number, :facebook)
   end
 end

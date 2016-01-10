@@ -3,25 +3,41 @@
   <%= f.error_notification %>
 
   <div class="form-inputs">
+    <div >
     <%= image_tag @group.picture.url(:thumb) %>
     <%= f.input :picture, as: :file %>
-    <p>From left to right:</br>
-      Only accountancy students can be tagged. :)</p>
+    <p class="group-form" >From left to right:
+      </p>
+    <div class="group-form">
+     <%= text_field_tag :user1 %>
+   </div> <div class="group-form">
+     <%= text_field_tag :user2 %>
+     </div> <div class="group-form">
+     <%= text_field_tag :user3 %>
+    </div> <div class="group-form">
+     <%= text_field_tag :user4 %>
+     </div> <div class="group-form">
+     <%= text_field_tag :user5 %>
+     </div> <div class="group-form">
+     <%= text_field_tag :user6 %>
+     </div> <div class="group-form">
+     <%= text_field_tag :user7 %>
+     </div> <div class="group-form">
+     <%= text_field_tag :user8 %>
+     </div> <div class="group-form">
+     <%= text_field_tag :user9 %>
+     </div> <div class="group-form">
+    <%= text_field_tag :user10 %>
 
-     1 <%= text_field_tag :user1 %></br>
-     2 <%= text_field_tag :user2 %></br>
-     3 <%= text_field_tag :user3 %></br>
-     4 <%= text_field_tag :user4 %></br>
-     5 <%= text_field_tag :user5 %></br>
-     6 <%= text_field_tag :user6 %></br>
-     7 <%= text_field_tag :user7 %></br>
-     8 <%= text_field_tag :user8 %></br>
-     9 <%= text_field_tag :user9 %></br>
-    10 <%= text_field_tag :user10 %></br>
+  </div>
   </div>
 
-  <div class="form-actions">
-    <%= f.button :submit, value: "Submit" %>
-  </div>
+  
+    <p class="group-form">Tagging non-accountancy students will result in an error. :(
+      </p>
+      
+    <%= f.button :submit, value: "Submit", id:"solo-submit" %>
+  
 <% end %>
+</div>
 </div>
