@@ -28,6 +28,7 @@ class SolosController < ApplicationController
   end
 
   def create
+    current_user.solo.delete_all if current_user.solo
     @solo = Solo.new(solo_params)
     @solo.user_id = current_user.id
     
