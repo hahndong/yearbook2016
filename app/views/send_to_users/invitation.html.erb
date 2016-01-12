@@ -1,9 +1,9 @@
 <div style="font-family:helvetica; font-size:13px;">
-<p>Hi There!!</p>
+<p>Dear <%= @user.full_name.capitalize %>,</p>
 
-<p>I am Hahn Dong from the year book committee for our graduating class of 2016! As our graduation approaches *looks far way*, I would like to invite you to share with us your picture for the year book.</p>
+<p>I am Hahn Dong Seok, a year 4 accountancy student. I am heading this year's year book committee for our graduating class of 2016! As our graduation approaches, I would like to invite you to share with us your picture for the year book.</p>
 
-<p>You may upload your picture in the following link. Also you may also check out what others have post. *grins* So what are you waiting for!</p>
+<p>You may upload your picture in the following link. Also you may also check out what others have post. So what are you waiting for!</p>
 
 <%= link_to 'See what others have posted!', email_invit_url(user_token: @user.authentication_token, user_email: @user.email) %>
 
