@@ -6,10 +6,11 @@
 	<div style="color:red; width:80px; display:inline-block">NOT POSTED</div>
 	<% end %>
 	|
-	<% if user.invit != nil %> 
-	<div style="color:blue; width:80px; display:inline-block"> INVIT SENT </div> 
+	<% if user.invit == 0 || user.invit == nil %> 
+		<div style="color:red; width:80px; display:inline-block", id="user<%= user.id %>">NOT SENT</div>
 	<% else %> 
-	<div style="color:red; width:80px; display:inline-block", id="user<%= user.id %>">NOT SENT</div>
+		<div style="color:blue; width:80px; display:inline-block"> INVIT SENT </div> 
+
 	<% end %>
 	| <%= link_to "Send invit to #{user.full_name}", users_sent_invit_path(user_id: user.id), remote: true %> </p><p>
  &nbsp&nbsp&nbsp&nbsp<%= email_invit_url(user_token: user.authentication_token, user_email: user.email) %> </p>
