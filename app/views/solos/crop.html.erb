@@ -26,6 +26,8 @@ function update_crop(coords) {
   $("#crop_y").val(Math.round(coords.y * ratio));
   $("#crop_w").val(Math.round(coords.w * ratio));
   $("#crop_h").val(Math.round(coords.h * ratio));
+  $("#cw").html(Math.round(coords.w * ratio));
+  $("#ch").html(Math.round(coords.h * ratio));
 }
 </script>
 <% end %>
@@ -41,6 +43,8 @@ function update_crop(coords) {
 
 <div class="middle center">
 <%= image_tag @solo.picture.url(:print), :id => "cropbox" %>
+<p style="font-family:din; font-size:18px; color:#595959;"><span id="cw"></span>x<span id="ch"></span> </p>
+<p style="font-family:din; font-size:18px;">Picture has to be minimally 496 x 1488.</p>
 
 <h4>Preview:</h4>
 

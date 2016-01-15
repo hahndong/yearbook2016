@@ -10,7 +10,11 @@ class SolosController < ApplicationController
   def index
     @solos = Solo.all
     @solo = Solo.new
-    
+  end
+
+  def indexprint
+    @solos = Solo.all
+    @solo = Solo.new
   end
 
   def show
