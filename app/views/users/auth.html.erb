@@ -1,0 +1,21 @@
+<div class="picture1crop">
+	<p>LOG IN EMAIL</p>
+</div>
+
+<div class="home">
+	<p class="homelink"><%= link_to "HOME", root_path %> > LOG IN EMAIL</p>
+
+
+<div class="pricing middle">
+	
+	<%= form_tag(users_auth_path, method: "get") do %>
+	  <%= label_tag(:email, "SMU EMAIL (jon.snow.2012@accountancy.smu.edu.sg)") %>
+	  <%= text_field_tag(:email) %>
+	  <%= submit_tag("SEND EMAIL") %>
+	<% end %>
+	<p>Email will be sent to your inbox. It may take 10-20 seconds for email to be sent out.</p>
+</div>	
+
+
+	
+</div>

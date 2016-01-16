@@ -11,6 +11,8 @@ Rails.application.routes.draw do
   get 'solos/volunteer' => 'solos#volunteer'
   get 'solos/thankyou' => 'solos#thankyou'
   resources :solos
+  get 'users/auth' => 'users#auth'
+
   devise_for :users , :skip => [:registrations, :passwords]   
   get 'users/sent_invit' =>'users#send_invit', defaults: { :format => 'js' }
   resources :users, except: [:new, :create, :destroy]
