@@ -2,7 +2,7 @@ class UsersController < ApplicationController
   include Pundit
   rescue_from Pundit::NotAuthorizedError, with: :user_not_authorized
   protect_from_forgery with: :exception
-  before_action :authenticate_user!
+  before_action :authenticate_user!, except: :auth
   after_action :verify_authorized, except: :auth
   def index
     @users = User.all.order(full_name: :asc)
