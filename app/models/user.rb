@@ -14,6 +14,21 @@ class User < ActiveRecord::Base
     self.update_attribute(:authentication_token, generate_authentication_token)
   end
   
+  require 'csv'
+  require 'roo'
+
+  def self.to_csv(options = {})
+    CSV.generate(options) do |csv|
+      header = column_names
+      csv << header
+      all.each do |user|
+        row = user.attributes.values_at(*column_names)
+        row = row << user.solo.present?
+        csv << row
+      end
+    end
+  end
+
   private
   def generate_authentication_token
     loop do

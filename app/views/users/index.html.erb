@@ -5,5 +5,5 @@
 <div class="home">
 	<p class="homelink"><%= link_to "HOME", root_path %> > GROUP </p>
 </div>
-
+<%= link_to "Export CSV", users_export_path(format: :csv) %>
 <%= render @users %>

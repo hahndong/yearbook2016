@@ -3,7 +3,7 @@ class UsersController < ApplicationController
   rescue_from Pundit::NotAuthorizedError, with: :user_not_authorized
   protect_from_forgery with: :exception
   before_action :authenticate_user!, except: :auth
-  after_action :verify_authorized, except: :auth
+  after_action :verify_authorized, except: [:auth, :users_export]
   def index
     @users = User.all.order(full_name: :asc)
     authorize User
@@ -26,6 +26,7 @@ class UsersController < ApplicationController
   end
   def auth
     if getemail
+      longemail = /accountancy/i.match(getemail.to_s).to_s
       @user = User.find_by_email(getemail)
       @user.send_invit
       users_auth_path
@@ -40,6 +41,12 @@ class UsersController < ApplicationController
     format.js
   end
   authorize @user
+  end
+  def users_export
+    @users=User.order(:full_name)
+    respond_to do |format|
+      format.csv { send_data @users.to_csv}
+    end
   end
 
   private

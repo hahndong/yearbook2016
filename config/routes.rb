@@ -14,6 +14,7 @@ Rails.application.routes.draw do
   get 'users/auth' => 'users#auth'
 
   devise_for :users , :skip => [:registrations, :passwords]   
+  get 'users/export' => 'users#users_export'
   get 'users/sent_invit' =>'users#send_invit', defaults: { :format => 'js' }
   resources :users, except: [:new, :create, :destroy]
 end
