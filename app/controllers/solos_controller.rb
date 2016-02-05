@@ -58,7 +58,7 @@ class SolosController < ApplicationController
           redirect_to edit_solo_path(@solo), notice: 'Updated successfully.'
       elsif params[:solo][:picture].blank? 
           @solo.picture.reprocess!
-          redirect_to edit_solo_path(@solo), notice: 'Updated successfully.'
+          redirect_to solos_path
       else
           render :action => "crop"
           
