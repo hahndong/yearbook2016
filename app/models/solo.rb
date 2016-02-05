@@ -48,10 +48,7 @@ class Solo < ActiveRecord::Base
     errors.add(:image, "Height must be at least #{required_height}px") unless dimensions.height >= required_height
     errors.add(:image, "Width must be at least #{required_width}px") unless dimensions.width >= required_width
     else
-
-    errors.add(:image, "Height must be at least #{required_height}px") unless crop_h.to_i >= required_height
-    errors.add(:image, "Width must be at least #{required_width}px") unless crop_w.to_i >= required_width
-    
+      
     end
 
     

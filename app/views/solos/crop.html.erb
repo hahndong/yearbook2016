@@ -38,6 +38,7 @@ function update_crop(coords) {
 
 <div class="home">
   <p class="homelink"><%= link_to "HOME", root_path %> > <%= link_to "SOLO", solos_path %> > EDIT > CROP</p>
+  <%= @error ? @error : "" %>
 </div>
 
 

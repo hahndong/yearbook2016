@@ -55,10 +55,15 @@ class SolosController < ApplicationController
     if @solo.update(solo_params)
       if params[:solo][:picture].blank? && params[:solo][:crop_x].blank?
           
-          redirect_to edit_solo_path(@solo), notice: 'Updated successfully.'
-      elsif params[:solo][:picture].blank? 
-          @solo.picture.reprocess!
           redirect_to solos_path
+      elsif params[:solo][:picture].blank? 
+          if params[:solo][:crop_w].to_i >= 496 && params[:solo][:crop_h].to_i >= 1488
+            @solo.picture.reprocess!
+            redirect_to solos_path
+          else
+             @error = "Height must be at least 1488px"
+             render :crop
+          end         
       else
           render :action => "crop"
           
@@ -100,5 +105,8 @@ class SolosController < ApplicationController
 
     def solo_params
       params.require(:solo).permit(:picture, :quote, :ans1, :ans2, :ans3, :ans4, :ans5, :ans6, :and7, :ans8, :qn9, :ans9, :qn10, :ans10, :crop_x, :crop_y, :crop_w, :crop_h)
+    end
+    def quote_params
+      params.require(:solo).permit(:quote)
     end
 end
