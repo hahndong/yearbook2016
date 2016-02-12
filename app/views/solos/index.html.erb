@@ -14,9 +14,10 @@
 
 <% if user_signed_in? %>
   <% unless current_user.solo %>  
-<p class="pricing middle"><%= link_to "Submit your picture here", new_solo_path %></p>
+<p class="pricing middle"><%= link_to "Submit your picture here*", new_solo_path %></p>
   <% end %>
 <% end %>
+<p  class=" middle center">* The yearbook is fully sponsored and subsidized by ICAEW. </br>By submitting your picture, you allow ICAEW to obtain your name and email only. </br>The hardcopy yearbook will be ready for collection (FOC) at Commencement 2016.</p>
 <div class="solos-box">
 <%= render @solos %>
 </div>
