@@ -53,7 +53,7 @@ class SolosController < ApplicationController
 
   def update
     if @solo.update(solo_params)
-      if params[:solo][:picture].blank? && params[:solo][:crop_x].blank?
+      if params[:solo][:picture].blank? && params[:solo][:crop_w].blank?
           
           redirect_to solos_path
       elsif params[:solo][:picture].blank? 

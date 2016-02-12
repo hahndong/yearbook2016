@@ -2,16 +2,18 @@ class Solo < ActiveRecord::Base
   	belongs_to :user
   	if Rails.env.production? 
   		has_attached_file :picture, styles: { 
+        original: {convert_options: '-auto-orient'},
     		disp: {geometry: "165x496>", :processors => [:cropper]},
         thumb: {geometry: "248x744>", :processors => [:cropper]},
         print: {geometry: "496x1488>", :processors => [:cropper]}
-  			}, default_url: "/images/:style/missing.png"
+  			}, default_url: "/images/:style/missing.png", source_file_options: { all: '-auto-orient' }
 	else
 		has_attached_file :picture, styles: { 
+      original: {convert_options: '-auto-orient'},
 			disp: {geometry: "165x496>", :processors => [:cropper]},
 			thumb: {geometry: "248x744>", :processors => [:cropper]},
 			print: {geometry: "496x1488>", :processors => [:cropper]}
-		}, :url => "/system/:attachment/:id/:style/:filename", :path => ":rails_root/public/system/:attachment/:id/:style/:filename",  default_url: "/images/:style/missing.png"
+		}, :url => "/system/:attachment/:id/:style/:filename", :path => ":rails_root/public/system/:attachment/:id/:style/:filename",  default_url: "/images/:style/missing.png", source_file_options: { all: '-auto-orient' }
 	end
 
 
