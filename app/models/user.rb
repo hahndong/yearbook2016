@@ -48,7 +48,7 @@ class User < ActiveRecord::Base
   has_one :solo
   has_and_belongs_to_many :groups
 
-  enum role: [:user ,:admin]
+  enum role: [:user ,:admin, :good]
   after_initialize :set_default_role, :if => :new_record?
   def set_default_role
     self.role ||= :user

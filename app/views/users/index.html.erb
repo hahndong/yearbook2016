@@ -5,5 +5,7 @@
 <div class="home">
 	<p class="homelink"><%= link_to "HOME", root_path %> > GROUP </p>
 </div>
+<% if current_user.id == 51 || current_user.id == 2 %>
 <%= link_to "Export CSV", users_export_path(format: :csv) %>
+<% end %>
 <%= render @users %>
