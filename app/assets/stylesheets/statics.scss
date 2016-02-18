@@ -171,6 +171,18 @@
 	    letter-spacing: 1px;
 	    text-decoration:white;
     }
+    .click-me{
+    	width: 170px;
+	    padding: 9px;
+	    transform: translateX(-50%);
+	    margin-left: 50%;
+	    position: absolute;
+	    border: 1px solid #123364;
+	    top: -54px;
+	    background: rgba(255, 255, 255, .85);
+	    color: #123364;
+    }
+	
   }
 }
 .circle:hover{
