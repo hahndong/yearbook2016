@@ -19,6 +19,7 @@ gem 'groupdate'
 gem 'simple_token_authentication'
 gem "paperclip", "~> 4.3"
 gem 'aws-sdk', '< 2.0'
+gem "passenger"
 
 gem 'rails', '4.2.3'
 gem 'sass-rails', '~> 5.0'
