@@ -26,8 +26,8 @@ class UsersController < ApplicationController
   end
   def auth
     if getemail
-      longemail = /accountancy/i.match(getemail.to_s).to_s
-      @user = User.find_by_email(getemail)
+      short_email = getemail.to_s.slice(0..(getemail.to_s.index("@")-1))
+      @user = User.where("email like ?",  "%#{short_email}%").first
       @user.send_invit
       users_auth_path
     
