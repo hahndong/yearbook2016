@@ -44,6 +44,8 @@ class SolosController < ApplicationController
 
       end
     else
+
+      flash[:alert] = "Could not save for some reason. Please contact someone from the yearbook committee."
       render :action => "new"
       
     end

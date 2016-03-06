@@ -1,6 +1,6 @@
 <%= simple_form_for(@solo) do |f| %>
   <%= f.error_notification %>
-    <%= @solo.errors.full_messages.first if @solo.errors.any? %>
+<% unless @solo.errors.full_messages.blank? %><div class="error_notification"><%= @solo.errors.full_messages.first if @solo.errors.any? %></div><% end  %>
   <div class="form-inputs">
     <div  style="text-align:center;">
         <p>

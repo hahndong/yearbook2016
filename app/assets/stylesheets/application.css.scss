@@ -137,3 +137,35 @@ html, body{
   }
   
 }
+.notification{
+  font-size: 14px;
+    -moz-border-radius: 3px;
+    -webkit-border-radius: 3px;
+    -ms-border-radius: 3px;
+    border-radius: 3px;
+    margin: inherit auto;
+    line-height: 1.3em;
+    padding: 12px;
+    text-align: center;
+}
+.notification-success{
+  color: white;
+    background-color: #79bd9a;
+}
+.alert{
+  color: white;
+    background-color: #f45d5d; 
+}
+.error_notification{
+  font-size: 14px;
+    -moz-border-radius: 3px;
+    -webkit-border-radius: 3px;
+    -ms-border-radius: 3px;
+    border-radius: 3px;
+    margin: inherit auto;
+    line-height: 1.3em;
+    padding: 12px;
+    text-align: center;
+    color: white;
+    background-color: #f45d5d; 
+}
