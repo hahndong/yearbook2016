@@ -47,7 +47,7 @@ class Solo < ActiveRecord::Base
     required_height = 1488
     if !picture.queued_for_write.blank?
     dimensions = Paperclip::Geometry.from_file(picture.queued_for_write[:original])
-    errors.add(:image, "Height must be at least #{required_height}px") unless dimensions.height >= required_height
+    errors.add(:image, "Height must be at least #{required_height}px.\nTips to resize picture:\n1. Open image in preview\n2. Click 'Tools' and 'Adjust Size..'\n3. Type in 1489 in the height field.") unless dimensions.height >= required_height
     errors.add(:image, "Width must be at least #{required_width}px") unless dimensions.width >= required_width
     else
       

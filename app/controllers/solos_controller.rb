@@ -63,7 +63,8 @@ class SolosController < ApplicationController
             @solo.picture.reprocess!
             redirect_to solos_path
           else
-             @error = "Height must be at least 1488px"
+             @error = "Height must be at least 1488px."
+             
              render :crop
           end         
       else
