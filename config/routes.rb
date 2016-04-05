@@ -7,6 +7,7 @@ Rails.application.routes.draw do
   resources :groups
 
   get 'solos/designs' => 'solos#designs'
+  get 'solos/:id/large' => 'solos#large'
   get 'solos/indexprint' => 'solos#indexprint'
   get 'solos/volunteer' => 'solos#volunteer'
   get 'solos/thankyou' => 'solos#thankyou'

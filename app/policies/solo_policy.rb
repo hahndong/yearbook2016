@@ -5,7 +5,9 @@ class SoloPolicy
     @current_user = current_user
     @solo = model
   end
-
+  def large?
+    @current_user.user? || @current_user.admin?
+  end
   def new?
     @current_user.user? || @current_user.admin?
   end

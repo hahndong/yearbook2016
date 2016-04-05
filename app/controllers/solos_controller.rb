@@ -5,7 +5,7 @@ class SolosController < ApplicationController
   protect_from_forgery with: :exception
   before_action :authenticate_user!, except: [:index]
   after_action :verify_authorized, except: [:index, :designs, :volunteer, :thankyou]
-  before_action :set_solo, only: [:show, :edit, :update, :destroy]
+  before_action :set_solo, only: [:show, :edit, :update, :destroy, :large]
 
   def index
     @solos = Solo.all
@@ -17,6 +17,10 @@ class SolosController < ApplicationController
     @solo = Solo.new
   end
 
+  def large
+    authorize @solo
+  end
+  
   def show
     authorize @solo
   end
