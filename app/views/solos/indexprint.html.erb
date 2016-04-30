@@ -1,0 +1,37 @@
+<div class="picture1crop">
+	<p>SOLO</p>
+</div>
+
+<div class="home">
+	<p class="homelink"><%= link_to "HOME", root_path %> > SOLO  
+<% if user_signed_in? %>
+  <% if current_user.solo %>
+  
+  > <%= link_to "EDIT", edit_solo_path(current_user.solo.id) %> 
+  <% end %>
+<% end %></p>
+
+
+<% if user_signed_in? %>
+  <% unless current_user.solo %>  
+<p class="pricing middle"><%= link_to "Submit your picture here*", new_solo_path %></p>
+  <% end %>
+<% end %>
+<div class="center">
+<%= mail_to "weiluo.tan@icaew.com", subject: "I am interested in ICAEW ACA programme",
+         body: "Hi Wei Luo,\n\nI would like to find out more about the ACA programme. Please provide me with one or more of the following information:\n·         Programme outline\n·         Credit for Prior Learning (CPL) or number of exemption\n·         Duration of study\n·         How much will this programme cost\n·         Other information [please state]\n\nRegards,\n<<Name>>" do %>
+	<%= image_tag('ICAEW-645x120_A3.gif') %>  
+<% end %>
+</div>
+
+<p  class=" middle center">* The yearbook is fully sponsored and subsidized by ICAEW. </br>By submitting your picture, you allow ICAEW to obtain your name and email only. </br>The hardcopy yearbook will be ready for collection (FOC) at Commencement 2016.</p>
+<div class="solos-box">
+<% @solos.each do |pic| %>
+  <%= render partial: "soloprint", locals: { solo: pic } %>
+<% end %>
+</div>
+
+	
+
+	
+</div>

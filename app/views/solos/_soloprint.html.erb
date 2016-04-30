@@ -1,0 +1,15 @@
+
+	<div class="center inline-block">
+		<div class="solo">
+		<%= image_tag solo.picture.url(:print) %></br>
+		<div class="lorem-box">
+			<% if solo.quote.blank? %>
+			No quotes to show
+			<% else %>
+			<%= solo.quote %>
+			<% end %>
+		</div>
+
+		</br><%= solo.user.full_name %>
+		</div>
+	</div>
