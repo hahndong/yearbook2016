@@ -4,8 +4,9 @@ Rails.application.routes.draw do
   get '/pricing' => 'statics#pricing'
   get '/design' => 'statics#design'
   get 'groups/typeahead.json' => 'groups#typeahead'
-  resources :groups
   get 'groups/indexprint' => 'groups#indexprint'
+  resources :groups
+  
 
   get 'solos/designs' => 'solos#designs'
   get 'solos/:id/large' => 'solos#large'
