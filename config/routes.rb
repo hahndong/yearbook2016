@@ -5,6 +5,7 @@ Rails.application.routes.draw do
   get '/design' => 'statics#design'
   get 'groups/typeahead.json' => 'groups#typeahead'
   resources :groups
+  get 'groups/indexprint' => 'groups#indexprint'
 
   get 'solos/designs' => 'solos#designs'
   get 'solos/:id/large' => 'solos#large'
