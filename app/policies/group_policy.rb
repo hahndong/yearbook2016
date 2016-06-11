@@ -13,6 +13,9 @@ class GroupPolicy
   def index?
     @current_user.user? || @current_user.admin?
   end
+  def indexprint?
+    @current_user.admin?
+  end
 
   def create?
     @current_user.user? || @current_user.admin?

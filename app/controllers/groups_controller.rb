@@ -13,6 +13,7 @@ include Pundit
   end
   def indexprint
     @groups = Group.all
+    authorize Group
   end
     
   def show
