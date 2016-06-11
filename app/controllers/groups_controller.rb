@@ -15,7 +15,6 @@ include Pundit
     @groups = Group.all
   end
     
-  end
   def show
     authorize @group
   end
