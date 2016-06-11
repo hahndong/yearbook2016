@@ -11,7 +11,11 @@ include Pundit
     @group = Group.new
     authorize Group
   end
-
+  def indexprint
+    @groups = Group.all
+  end
+    
+  end
   def show
     authorize @group
   end
